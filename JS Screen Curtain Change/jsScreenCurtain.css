@@ -1,0 +1,103 @@
+/* Colours */
+:root {
+  --secondaryLight: #879794;
+  --primaryDark: #0b1c22;
+  --primary: #15333d;
+  --secondaryMedium: #8b9a97;
+  --lPink: #f5dabd;
+
+  --transitionFadeTime: 0.5s;
+  --transitionSideTime: 0.3s;
+  --transitionTopTime: 0.3s;
+}
+
+body {
+  background-color: aqua;
+}
+
+/* Max width for section and centre */
+section {
+  background-color: azure;
+
+  margin: 0 auto;
+  max-width: 800px;
+  width: 100%;
+  padding: 10px;
+  border-color: rgb(161, 88, 0);
+  border-width: 8px;
+  border-style: solid;
+}
+
+/* Intro banner */
+header {
+  height: 25vh;
+  background-image: url("https://images.unsplash.com/photo-1497384401032-2182d2687715?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
+  background-size: cover;
+  background-position: center center;
+}
+
+h1 {
+  font-size: 3em;
+  margin-top: 0;
+  padding-top: 5vh;
+  padding-right: 3vw;
+  color: #0b1c22;
+  text-align: right;
+}
+
+/* Animation between Screens*/
+
+/* Fade transition */
+.transition-fade {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 101;
+  background-color: var(--primary);
+  opacity: 0;
+  pointer-events: none; /*no interactivity*/
+  transition: var(--transitionFadeTime) ease-out;
+}
+
+.transition-fade.is-active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.hiddenPage{
+    display: none;
+}
+
+/* Left to Right transition */
+.transition-2 {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    bottom: 0;
+    z-index: 101;
+    background-color: var(--primary);
+    transition: var(--transitionSideTime) ease-out;
+  }
+  
+  .transition-2.is-active {
+    left: 0;
+  }
+
+/* top To Bottom transition */
+.transition-3 {
+    position: fixed;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 100%;
+    z-index: 101;
+    background-color: var(--primary);
+    transition: var(--transitionTopTime) ease-out;
+  }
+  
+  .transition-3.is-active {
+    top: 0;
+  }
